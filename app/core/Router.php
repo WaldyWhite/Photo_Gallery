@@ -3,14 +3,13 @@
 namespace App\core;
 define("CONTROLLERS_NAMESPASE","App\\controllers\\");
 class Router {
-
+  
     public static function start () {
-
-        $controllerClassname = "home";
 
         $routers = explode('/', $_SERVER['REQUEST_URI']);
 
-        if(!empty($routers[1])) {
+        $controllerClassname = 'home';
+        if(empty($routers[1])) {
             $controllerClassname = 'home';
         }
         

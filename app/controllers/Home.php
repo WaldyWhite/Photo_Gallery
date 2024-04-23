@@ -17,5 +17,8 @@ class Home extends Controller
     public function contacts(){
         $this->view->rendering("contacts.phtml", "template.phtml");
     }
+    public function error() {
+        $this->view->rendering("error.phtml", "template.phtml");
+    }
 
 }

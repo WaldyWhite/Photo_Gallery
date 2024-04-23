@@ -7,4 +7,7 @@
 } else if(explode('/', $_SERVER['REQUEST_URI'])[1] === 'contacts')
 {
     echo 'Контакты';
+} else if(explode('/', $_SERVER['REQUEST_URI'])[1] === 'error')
+{
+    echo 'Ошибка';
 }
