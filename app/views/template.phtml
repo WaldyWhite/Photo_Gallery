@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app\CSS\style.css">
+    <title>Сайт-визитка</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class ='header-item'>
+            <ul>
+                <li class='img'>
+                    <img src="app\img\favpng_Сайт-визитка-logo.png" alt="logo">
+                </li>
+                <li>
+                    <a href="home">Главная</a>
+                </li>
+                <li>
+                    <a href="about">О Нас</a>
+                </li>
+                <li>
+                    <a href="contacts">Контакты</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-line">
+            <p class='title'>Сайт-визитка</p>
+        </div>
+        <div class='undeline'>
+            <p>Вы здесь: <?php include VIEW . 'inviews' . DIRECTORY_SEPARATOR . 'positionviwe.php' ?></p>
+        </div>
+
+    </header>
+
+    <main class="main">
+        <?php include_once VIEW . $content_view ?>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li><a href="tel:+4733378901">Tel: +47 333 789 01 </li>
+            <li><a href= "mailto:abc@example.com">Наш Email</a></li>
+        </ul> 
+    </footer>
+</body>
+
+</html>
