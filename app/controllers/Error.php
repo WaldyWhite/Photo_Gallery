@@ -1,10 +1,10 @@
 <?php
 
 namespace App\controllers;
-
-class Error
+use App\core\Controller;
+class Error extends Controller
 {
     public function index () {
-        echo "error 404";
+        $this->view->rendering("error.phtml", "template.phtml");
     }
 }

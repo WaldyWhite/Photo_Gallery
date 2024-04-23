@@ -6,9 +6,13 @@ class Router {
 
     public static function start () {
 
+        $controllerClassname = "home";
+
         $routers = explode('/', $_SERVER['REQUEST_URI']);
 
-        $controllerClassname = "home";
+        if(!empty($routers[1])) {
+            $controllerClassname = 'home';
+        }
         
         $actionName = empty($routers[1]) ? "index": $routers[1];
 
