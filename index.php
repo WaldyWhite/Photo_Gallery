@@ -1,6 +1,6 @@
 <?php
-// вывод ошибок 
-ini_set("display_errors",1);
+// error output
+ini_set("display_errors", 1);
 
-// подгрузка файла bootstrap.php
+// file upload bootstrap.php
 require_once "app\bootstrap.php";

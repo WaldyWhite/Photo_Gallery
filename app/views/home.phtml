@@ -1,16 +1,52 @@
-<div class="content">
-  <div class = "content-items" >
-    <div class = "card" >
-      <img class="card-logo" src="app\img\funnel-email.png" alt="logo">
-      <p class = 'title' >Сайт-визитка</p>
+<div class="container pt-4">
+    <h1 class="mb-4"><a href="<?php echo URL; ?>">Image Gallery</a></h1>
+
+    <!-- Outputting success/error messages -->
+    <?php foreach ($errors as $error): ?>
+        <div class="alert alert-danger"><?php echo $error; ?></div>
+    <?php endforeach; ?>
+
+    <?php foreach ($messages as $message): ?>
+        <div class="alert alert-success"><?php echo $message; ?></div>
+    <?php endforeach; ?>
+    <div class="header">
+        <h3>List of Files</h3>
+        <?php loginname() ?>
+        <div class="buttonsinlog">
+            <div>
+                <button onclick="showlogin('block')" class="btn btn-link">login</button>
+            </div>
+            <form method="post" id="logout">
+                <button type="submit" class="btn btn-link logaut" name="logout">logout</button>
+            </form>
+        </div>
     </div>
-    <div class = "text" >
-      <h3>Сайт-визитка</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <!-- Outputting images-->
+    <div class="mb-4">
+        <?php if (!empty($files)): ?>
+            <div class="row">
+                <?php foreach ($files as $file): ?>
+
+                    <div class="col-12 col-sm-3 mb-4">
+                        <form method="post">
+                            <input type="hidden" name="name" value="<?php echo $file; ?>">
+                            <button type="submit" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </form>
+                        <a href="<?php echo URL . '\uploads\\' . $file; ?>" title="Просмотр полного изображения">
+                            <img src="<?php echo UPLOAD_DIR . DIRECTORY_SEPARATOR . $file ?>" class="img-thumbnail"
+                                 alt="<?php echo $file; ?>">
+                        </a>
+                        <?php viewlinks($file) ?>
+                    </div>
+
+                <?php endforeach; ?>
+            </div><!-- /.row -->
+        <?php else: ?>
+            <div class="alert alert-secondary">No images loaded</div>
+        <?php endif; ?>
     </div>
-  </div>
-</div>
+    <?php viewuploadform() ?>
+
+</div><!-- /.container -->

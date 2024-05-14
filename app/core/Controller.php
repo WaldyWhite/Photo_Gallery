@@ -2,20 +2,23 @@
 
 namespace App\core;
 
-interface IController 
+interface IController
 {
     public function index();
 }
 
 
-class Controller implements IController 
+class Controller implements IController
 {
     protected $view;
-    
-    public function __construct() {
+
+    public function __construct()
+    {
         $this->view = new View();
     }
-    
-    public function index() {}
+
+    public function index()
+    {
+    }
 
 }

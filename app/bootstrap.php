@@ -1,16 +1,17 @@
 <?php
-// пространство имен App
+
+// App namespace
 namespace App;
 
 use App\core\Router;
 
-// стартуем сессию
+// let's start the session
 session_start();
 
-// подгрузка файла config.php
-require_once  "core" . DIRECTORY_SEPARATOR . "config.php";
+// loading the config.php file
+require_once "core" . DIRECTORY_SEPARATOR . "config.php";
 
-// подключение autoload.php из папки vendor
+// connecting autoload.php from the vendor folder
 require_once dirname(__DIR__, 1) . '/vendor/autoload.php';
 
 Router::start();
