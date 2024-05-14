@@ -1,6 +1,6 @@
-### MVC каркас фреймворка
+### Photo Gallery
 
-### Требуется установка пакетного менеджера Composer
+### Requires installation of Composer package manager
 
 <img src='app\img\96b62c18e8edf6bc45f328123c5c4a4b.png'>
 
